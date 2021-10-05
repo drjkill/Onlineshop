@@ -7,26 +7,35 @@ export class Catalog {
     return this;
   };
   addProduct(item: Item) {
-      if (this.items.length < 10) {
-        this.items.push(item);
-      }
+    this.items.push(item);
+    return this.items     
+  };
+/**3 Parameter !!! index, name, price */
+  updateProduct(name: string){
+    /*this.items[1].name = "";
+    this.items[1].price = 0.18;
+    return this.items*/
+
     };
-  count() {
-      return this.items.length;
+  deleteProduct(name:string){
+     this.items = this.items.filter(item => item.name !== name);
+     console.log(name + " removed")
+    };
+  showProduct(name:string){
+       const item = this.items.find(item => item.name == name);
+      console.log(item?.name + " Preis: " + item?.price + "€")
+    };
+  getProductPrice(name:string){
+    const item = this.items.find(item => item.name == name);
+    console.log( " Preis: " + item?.price + "€")
+    };
+  hasProduct(name:string){
+    const item2 = this.items.find(item => item.name == name);
+    if(this.items.find(item => item.name == name)) {
+    console.log( " ja: Produkt:" + item2?.name + " Preis: " + item2?.price + "€")
     }
-  updateProduct(){
-    return this.items
-    };
-  deleteProduct(){
-    const deleted = this.items.splice(/*index, howMany, [element1][, ..., elementN]*/2,0,);
-    };
-  showProduct(){
-      console.table(this.items);
-    };
-  getProductPrice(){
-
-    };
-  hasProduct(){
-
+    else {
+      console.log( " Produkt: " + name + " nicht vorhanden")
+    }
     };  
 };

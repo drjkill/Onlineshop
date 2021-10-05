@@ -8,16 +8,16 @@ class ShoppingBasket {
     }
     ;
     addItem(item) {
-        if (this.items.length < 10) {
-            this.items.push(item);
-        }
+        this.items.push(item);
+        return this.items;
     }
     ;
     count() {
         return this.items.length;
     }
-    deleteItem() {
-        const deleted = this.items.splice(/*index, howMany, [element1][, ..., elementN]*/ 2, 0);
+    deleteItem(name) {
+        this.items = this.items.filter(item => item.name !== name);
+        console.log(name + " removed");
     }
     ;
     deleteItems() {
@@ -31,7 +31,7 @@ class ShoppingBasket {
     sortByName() {
         const sorted = this.items.sort();
         console.table(this.items);
-        return this.items;
+        return sorted;
     }
     ;
     printPackList() {

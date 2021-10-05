@@ -8,30 +8,40 @@ class Catalog {
     }
     ;
     addProduct(item) {
-        if (this.items.length < 10) {
-            this.items.push(item);
-        }
-    }
-    ;
-    count() {
-        return this.items.length;
-    }
-    updateProduct() {
+        this.items.push(item);
         return this.items;
     }
     ;
-    deleteProduct() {
-        const deleted = this.items.splice(/*index, howMany, [element1][, ..., elementN]*/ 2, 0);
+    /**3 Parameter !!! index, name, price */
+    updateProduct(name) {
+        /*this.items[1].name = "";
+        this.items[1].price = 0.18;
+        return this.items*/
     }
     ;
-    showProduct() {
-        console.table(this.items);
+    deleteProduct(name) {
+        this.items = this.items.filter(item => item.name !== name);
+        console.log(name + " removed");
     }
     ;
-    getProductPrice() {
+    showProduct(name) {
+        const item = this.items.find(item => item.name == name);
+        console.log(item?.name + " Preis: " + item?.price + "€");
     }
     ;
-    hasProduct() {
+    getProductPrice(name) {
+        const item = this.items.find(item => item.name == name);
+        console.log(" Preis: " + item?.price + "€");
+    }
+    ;
+    hasProduct(name) {
+        const item2 = this.items.find(item => item.name == name);
+        if (this.items.find(item => item.name == name)) {
+            console.log(" ja: Produkt:" + item2?.name + " Preis: " + item2?.price + "€");
+        }
+        else {
+            console.log(" Produkt: " + name + " nicht vorhanden");
+        }
     }
     ;
 }

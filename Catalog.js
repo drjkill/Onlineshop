@@ -1,7 +1,7 @@
 "use strict";
 class Catalog {
-    constructor(product, price) {
-        this.product = product;
+    constructor(products, price) {
+        this.products = products;
         this.price = price;
     }
     ;
@@ -19,4 +19,4 @@ class Catalog {
     ;
 }
 ;
-const catalog = new Catalog("tttt", 10.00);
+const catalog = new Catalog([], []);

@@ -1,9 +1,9 @@
 class Catalog {
-    product: string;
-    price: number;
+    products: string[];
+    price: number[];
     
-    constructor(product:string,price:number) {
-      this.product = product;
+    constructor(products:string[],price:number[]) {
+      this.products = products;
       this.price = price;
     };
 
@@ -14,4 +14,4 @@ class Catalog {
     getProductPrice(){};
     hasProduct(){};
 };
-const catalog = new Catalog("tttt",10.00);
+const catalog = new Catalog([],[]);

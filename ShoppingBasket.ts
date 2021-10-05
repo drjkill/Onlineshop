@@ -1,18 +1,38 @@
-class ShoppingBasket{
-   item: string;
-   price: number;
+import { Item } from "./interface"; 
 
-   constructor(item:string,price:number){
-       this.item = item;
-       this.price = price;
-   };
+  export class ShoppingBasket {
+     items:Array<Item> = [];
+  
+    constructor() {
+      return this;
+    };
+  
+    addItem(item: Item) {
+      if (this.items.length < 10) {
+        this.items.push(item);
+      }
+    };
+    count() {
+      return this.items.length;
+    }
+    deleteItem(){
+    const deleted = this.items.splice(/*index, howMany, [element1][, ..., elementN]*/2,0,);
+  };
+    deleteItems() {
+      this.items = [];
+      return this.items;
+    }
+    print(){
+      console.table(this.items);
+    };
+    sortByName(){
+      const sorted = this.items.sort();
+      console.table(this.items);
+      return this.items;
 
-   addItem(){};
-   deleteItem(){};
-   deleteItems(){};
-   print(){};
-   sortByName(){};
-   printPackList(){};
-};
-
-const basket = new ShoppingBasket("ttt",10.00);
+    };
+    printPackList(){
+      console.table(this.items);
+    };   
+  
+  };

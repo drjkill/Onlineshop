@@ -1,22 +1,39 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Catalog = void 0;
 class Catalog {
-    constructor(products, price) {
-        this.products = products;
-        this.price = price;
+    constructor() {
+        this.items = [];
+        return this;
     }
     ;
-    addProduct() { }
+    addProduct(item) {
+        if (this.items.length < 10) {
+            this.items.push(item);
+        }
+    }
     ;
-    updateProduct() { }
+    count() {
+        return this.items.length;
+    }
+    updateProduct() {
+        return this.items;
+    }
     ;
-    deleteProduct() { }
+    deleteProduct() {
+        const deleted = this.items.splice(/*index, howMany, [element1][, ..., elementN]*/ 2, 0);
+    }
     ;
-    showProduct() { }
+    showProduct() {
+        console.table(this.items);
+    }
     ;
-    getProductPrice() { }
+    getProductPrice() {
+    }
     ;
-    hasProduct() { }
+    hasProduct() {
+    }
     ;
 }
+exports.Catalog = Catalog;
 ;
-const catalog = new Catalog([], []);

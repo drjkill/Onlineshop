@@ -1,7 +1,7 @@
 import { Item } from "./interface"; 
 
   export class ShoppingBasket {
-     items:Array<Item> = [];
+    items:Array<Item> = [];
   
     constructor() {
       return this;
@@ -29,7 +29,6 @@ import { Item } from "./interface";
       const sorted = this.items.sort();
       console.table(this.items);
       return this.items;
-
     };
     printPackList(){
       console.table(this.items);

@@ -7,8 +7,9 @@ export class Catalog {
     return this;
   };
   addProduct(item: Item) {
-    this.items.push(item);
-    return this.items     
+
+        this.items.push(item);
+        return this.items        
   };
 /**3 Parameter !!! index, name, price */
   updateProduct(name: string){
@@ -23,19 +24,25 @@ export class Catalog {
     };
   showProduct(name:string){
        const item = this.items.find(item => item.name == name);
-      console.log(item?.name + " Preis: " + item?.price + "€")
+       console.log(item?.name + " Preis: " + item?.price + "€")
+      
     };
   getProductPrice(name:string){
-    const item = this.items.find(item => item.name == name);
+    const item = this.items.find(item => item.name === name);
     console.log( " Preis: " + item?.price + "€")
     };
   hasProduct(name:string){
     const item2 = this.items.find(item => item.name == name);
     if(this.items.find(item => item.name == name)) {
-    console.log( " ja: Produkt:" + item2?.name + " Preis: " + item2?.price + "€")
+    console.log( " ja: Produkt: " + item2?.name + " Preis: " + item2?.price + "€")
     }
     else {
       console.log( " Produkt: " + name + " nicht vorhanden")
     }
     };  
 };
+
+
+
+
+   

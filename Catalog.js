@@ -30,14 +30,14 @@ class Catalog {
     }
     ;
     getProductPrice(name) {
-        const item = this.items.find(item => item.name == name);
+        const item = this.items.find(item => item.name === name);
         console.log(" Preis: " + item?.price + "€");
     }
     ;
     hasProduct(name) {
         const item2 = this.items.find(item => item.name == name);
         if (this.items.find(item => item.name == name)) {
-            console.log(" ja: Produkt:" + item2?.name + " Preis: " + item2?.price + "€");
+            console.log(" ja: Produkt: " + item2?.name + " Preis: " + item2?.price + "€");
         }
         else {
             console.log(" Produkt: " + name + " nicht vorhanden");

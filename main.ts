@@ -12,7 +12,6 @@ catalog1.addProduct({name: "Feile",    price: 0.35});
 catalog1.addProduct({name: "säge",     price: 0.45});
 catalog1.addProduct({name: "Bohrer",   price: 0.55});
 /*================== AUSGABE============================================== */
-//console.log(catalog1);
 console.table(catalog1);
 catalog1.updateProduct("");
 catalog1.deleteProduct("säge")
@@ -21,21 +20,17 @@ catalog1.getProductPrice("Feile")
 catalog1.hasProduct("Feile")
 /*================ ShoppingBasket ======================================== */
 const basket1  = new ShoppingBasket();
-basket1.addItem({name: "Schraube", price: 0.05});
-basket1.addItem({name: "Nagel",    price: 0.15});
-basket1.addItem({name: "Hammer",   price: 0.25});
-basket1.addItem({name: "Feile",    price: 0.35});
-basket1.addItem({name: "säge",     price: 0.45});
-basket1.addItem({name: "Schraube", price: 0.05});
+//basket1.addItem({name: "Schraube", price: 0.05});
+//basket1.addItem({name: "Nagel",    price: 0.15});
+//basket1.addItem({name: "Hammer",   price: 0.25});
+//basket1.addItem({name: "Feile",    price: 0.35});
+//basket1.addItem({name: "säge",     price: 0.45});
+//basket1.addItem({name: "Schraube", price: 0.05});
 /*================== AUSGABE ============================================= */
 //console.log(basket1);
-//console.table(basket1);
-basket1.deleteItem("")
-console.table(basket1);
-basket1.deleteItems()
-console.table(basket1);
-basket1.print()
-console.table(basket1);
-basket1.sortByName()
-console.table(basket1);
-basket1.printPackList()
+//basket1.deleteItem("");
+//basket1.deleteItems();
+//basket1.print();
+//basket1.sortByName();
+//basket1.printPackList()
+catalog1.addProduct({name: "Bohrer",   price: 0.55});

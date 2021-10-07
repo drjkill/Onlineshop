@@ -2,10 +2,11 @@ import { Item } from "./interface";
 import {isEqual } from "./equal";
 export class Catalog {
   items:Array<Item> = [];
+  caches: any;
     
   constructor() {
     return this;
-  };//  + Fehler wenn produkt vorhanden
+  };
   addProduct(newitem: Item) {
     const found = this.items.some(item => {
       return isEqual(newitem,item)
@@ -16,12 +17,12 @@ export class Catalog {
       console.log("Das Produkt ist schon vorhanden!");
     }
   };
-/**3 Parameter !!! index, name, price */
-  updateProduct(){
-    this.items[1].name = "test";
-    this.items[1].price = 0.18;
-    return this.items
 
+    updateProduct(name:string,newname:string,newprice:number){
+      const objIndex = this.items.findIndex((item => name == item.name));
+      this.items[objIndex].name = newname
+      this.items[objIndex].price = newprice
+    
     };
   deleteProduct(name:string){
     const dontExists:boolean = (!this.items.some(item => name === item.name))
@@ -34,17 +35,17 @@ export class Catalog {
    };
   showProduct(name:string){
        const item = this.items.find(item => item.name == name);
-       console.log(item?.name + " Preis: " + item?.price + "€")
+       console.log(item?.name + " Preis: " + item?.price.toFixed(2) + "€")
       
     };
   getProductPrice(name:string){
     const item = this.items.find(item => item.name === name);
-    console.log( " Preis: " + item?.price + "€")
+    console.log( " Preis: " + item?.price.toFixed(2) + "€")
     };
   hasProduct(name:string){
     const item2 = this.items.find(item => item.name == name);
     if(this.items.find(item => item.name == name)) {
-    console.log( " ja: Produkt: " + item2?.name + " Preis: " + item2?.price + "€")
+    console.log( " ja: Produkt: " + item2?.name + " Preis: " + item2?.price.toFixed(2) + "€")
     }
     else {
       console.log( " Produkt: " + name + " nicht vorhanden")

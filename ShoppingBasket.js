@@ -48,7 +48,7 @@ class ShoppingBasket {
         let sum = this.items.map(a => a.price).reduce(function (a, b) {
             return a + b;
         });
-        console.log("Summe: " + sum.toFixed(2) + "€");
+        console.log("                  Summe: " + sum.toFixed(2) + "€");
     }
     ;
 }

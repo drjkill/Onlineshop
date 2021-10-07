@@ -28,7 +28,7 @@ class Catalog {
     }
     ;
     deleteProduct(name) {
-        const dontExists = (this.items.some(item => item.name === item.name));
+        const dontExists = (!this.items.some(item => name === item.name));
         if (dontExists) {
             console.log("Produkt ist nicht vorhanden!");
         }

@@ -1,27 +1,37 @@
 import { Item } from "./interface";
-
+import {isEqual } from "./equal";
 export class Catalog {
   items:Array<Item> = [];
     
   constructor() {
     return this;
-  };
-  addProduct(item: Item) {
-
-        this.items.push(item);
-        return this.items        
+  };//  + Fehler wenn produkt vorhanden
+  addProduct(newitem: Item) {
+    const found = this.items.some(item => {
+      return isEqual(newitem,item)
+    } )
+    if(!found){
+      this.items.push(newitem);
+    }  else {
+      console.log("Das Produkt ist schon vorhanden!");
+    }
   };
 /**3 Parameter !!! index, name, price */
-  updateProduct(name: string){
-    /*this.items[1].name = "";
+  updateProduct(){
+    this.items[1].name = "test";
     this.items[1].price = 0.18;
-    return this.items*/
+    return this.items
 
     };
   deleteProduct(name:string){
-     this.items = this.items.filter(item => item.name !== name);
-     console.log(name + " removed")
-    };
+    const dontExists:boolean = (this.items.some(item => item.name === item.name))
+    if(dontExists){
+      console.log("Produkt ist nicht vorhanden!")
+    } else {
+    this.items = this.items.filter(item => item.name !== name);
+    console.log(name + " removed")
+    }
+   };
   showProduct(name:string){
        const item = this.items.find(item => item.name == name);
        console.log(item?.name + " Preis: " + item?.price + "€")

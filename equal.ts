@@ -7,3 +7,4 @@ export function isEqual(item1: Item, item2: Item) : boolean {
 function isObject(object: Item) {
   return object != null && typeof object === 'object';
 }
+

@@ -9,12 +9,8 @@ class ShoppingBasket {
     ;
     addItem(newitem) {
         this.items.push(newitem);
-        return this.items;
+        return newitem;
     }
-    ;
-    count() {
-        return this.items.length;
-    } //löschen über positionsnummer(arrayposition +1 ???)
     deleteItem(name) {
         const dontExists = (!this.items.some(item => name == item.name));
         if (dontExists) {
@@ -39,9 +35,15 @@ class ShoppingBasket {
         console.table(this.items);
         return sorted;
     }
-    ; // ausgabe mit anzahl(item => a + b ??)
+    ;
     printPackList() {
-        console.table(this.items);
+        const names = this.items.map(item => item.name);
+        const menge = [];
+        const newArray = this.items.map(item => item.name);
+        for (let i = 0; i < this.items.length; i++)
+            newArray[i] = [this.items[i], menge[names[i]] = names.filter(x => x == names[i]).length];
+        const result = [...new Set(newArray.map(a => JSON.stringify(a)))].map(a => JSON.parse(a));
+        return result;
     }
     ;
     getSum() {
@@ -54,6 +56,3 @@ class ShoppingBasket {
 }
 exports.ShoppingBasket = ShoppingBasket;
 ;
-function item(newitem, item) {
-    throw new Error("Function not implemented.");
-}

@@ -1,20 +1,17 @@
 import { Item } from "./interface";
 import {isEqual } from "./equal";
+
 export class ShoppingBasket {
   items: Array<Item> = [];
-  
-  constructor() {
+  constructor() {  
     return this;
   };
   
-  addItem(newitem: Item) {
+  addItem(newitem: Item): Item {
     this.items.push(newitem);
-    return this.items   
-  };
-  count() {
-    return this.items.length;
-  } //löschen über positionsnummer(arrayposition +1 ???)
-  deleteItem(name: string) {
+    return newitem   
+  }
+  deleteItem(name: string): void {
     const dontExists: boolean = (!this.items.some(item => name == item.name))
     if (dontExists) {
       console.log("Produkt ist nicht vorhanden!")
@@ -23,22 +20,28 @@ export class ShoppingBasket {
       console.log(name + " removed")
     }
   };
-  deleteItems() {
+  deleteItems(): Item[] {
     this.items = [];
     return this.items;
   }
-  print() {
+  print(): void {
     console.table(this.items);
   };
-  sortByName() {
+  sortByName(): Item[] {
     const sorted = this.items.sort((a, b) => a.name < b.name ? -1 : 1);
     console.table(this.items);
     return sorted;
-  };// ausgabe mit anzahl(item => a + b ??)
-  printPackList() {
-    console.table(this.items);
   };
-  getSum() {
+  printPackList() {
+    const names :any[] = this.items.map(item => item.name );
+    const menge = [];
+    const newArray: any[] = this.items.map(item => item.name );
+     for (let i = 0; i < this.items.length ; i++)
+     newArray[i] = [ this.items[i] , menge[names[i]] = names.filter(x => x == names[i]).length ];
+     const result = [...new Set(newArray.map(a => JSON.stringify(a)))].map(a => JSON.parse(a))
+     return result
+};     
+  getSum(): void {
     let sum = this.items.map(a => a.price).reduce(function (a, b) {
       return a + b;
     });
@@ -46,10 +49,3 @@ export class ShoppingBasket {
   };
 
 };
-
-
-
-function item(newitem: Item, item: Item) {
-  throw new Error("Function not implemented.");
-}
-

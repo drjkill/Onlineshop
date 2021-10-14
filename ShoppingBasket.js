@@ -11,6 +11,15 @@ class ShoppingBasket {
         this.items.push(newitem);
         return newitem;
     }
+    count() {
+        for (let i = 0; i <= this.items.length; i++) {
+            const posnr = i + 1;
+            console.log(posnr);
+            return posnr;
+        }
+        ;
+    }
+    ;
     deleteItem(name) {
         const dontExists = (!this.items.some(item => name == item.name));
         if (dontExists) {
@@ -32,27 +41,66 @@ class ShoppingBasket {
     ;
     sortByName() {
         const sorted = this.items.sort((a, b) => a.name < b.name ? -1 : 1);
-        console.table(this.items);
         return sorted;
     }
     ;
     printPackList() {
-        const names = this.items.map(item => item.name);
-        const menge = [];
-        const newArray = this.items.map(item => item.name);
-        for (let i = 0; i < this.items.length; i++)
-            newArray[i] = [this.items[i], menge[names[i]] = names.filter(x => x == names[i]).length];
-        const result = [...new Set(newArray.map(a => JSON.stringify(a)))].map(a => JSON.parse(a));
-        return result;
+        const packlist = this.items.filter((value, index, array) => array.findIndex(t => (t.name === value.name)) == index);
+        const packlistWithQuantity = packlist.map(item => {
+            const newItemWithQuantity = {
+                item: item,
+                quantity: this.items.filter(element => element.name == item.name).length
+            };
+            return newItemWithQuantity;
+        });
+        return packlistWithQuantity;
     }
     ;
+    printPackList2() {
+        const packList = [];
+        const newItemWithQuantity = { quantity: 1, item: this.items[0] };
+        packList.push(newItemWithQuantity);
+        for (let i = 1; i < this.items.length; i++) {
+            let found = false;
+            let position = -1;
+            for (let p = 0; p < packList.length; p++) {
+                if (packList[p].item == this.items[i]) {
+                    found = true; // gefunden
+                    position = p; //an position p(0-n) 
+                }
+            }
+            if (found) {
+                packList[position].quantity++;
+            }
+            else {
+                const newItemWithQuantity = { quantity: 1, item: this.items[i] };
+                packList.push(newItemWithQuantity);
+            }
+        }
+        ;
+        return packList;
+    }
     getSum() {
-        let sum = this.items.map(a => a.price).reduce(function (a, b) {
-            return a + b;
+        let sum = this.items.map(item => item.price).reduce(function (item, nextItem) {
+            return item + nextItem;
         });
-        console.log("                  Summe: " + sum.toFixed(2) + "€");
+        console.log("                                          Summe: " + sum.toFixed(2) + "€");
     }
     ;
 }
 exports.ShoppingBasket = ShoppingBasket;
 ;
+/*
+const names :any[] = this.items.map(item => item.name );// names[] sortiert items nach name
+    const menge = [];
+    const newArray: any[] = this.items.map(item => item.name );//new array aus names[] und menge[]
+     for (let i = 0; i < this.items.length ; i++)
+     newArray[i] = [ this.items[i] , menge[names[i]] = names.filter(x => x == names[i]).length ];
+     const result = [...new Set(newArray.map(a => JSON.stringify(a)))].map(a => JSON.parse(a))//doppelte Einträge entfernen
+     return result
+=> dkghdfkdlfg    V
+
+
+
+ 
+*/ 

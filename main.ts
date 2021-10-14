@@ -20,13 +20,13 @@ catalog1.addProduct(bohrer)
 catalog1.addProduct(schraube)
 
 /*================== AUSGABE============================================== */
-/*console.table(catalog1);
+console.table(catalog1);
 catalog1.updateProduct("Feile","Lüfter",4.90);
 console.table(catalog1);
 catalog1.deleteProduct("säge")
 catalog1.showProduct("Lüfter")
 catalog1.getProductPrice("Lüfter")
-catalog1.hasProduct("Feile")*/
+catalog1.hasProduct("Feile")
 
 /*================ ShoppingBasket ======================================== */
 const basket1  = new ShoppingBasket();
@@ -41,5 +41,9 @@ basket1.addItem(bohrer);
 
 /*================== AUSGABE ============================================= */
 console.table(basket1);
-console.log("Packliste: ")
-console.table(basket1.printPackList())
+basket1.deleteItem("auto")
+console.table(basket1.print());
+console.table(basket1.sortByName());
+console.log("Packliste: ");
+console.table(basket1.printPackList2());
+basket1.getSum();

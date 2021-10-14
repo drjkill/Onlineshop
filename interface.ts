@@ -4,3 +4,9 @@ export interface Item {
   }
 
 
+export interface ItemWithQuantity {
+  quantity:number,   
+  item:Item,
+     
+
+}

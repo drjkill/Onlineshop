@@ -80,7 +80,7 @@ export class ShoppingBasket {
   };
 
 };
-/*
+/* so nicht!!!
 const names :any[] = this.items.map(item => item.name );// names[] sortiert items nach name
     const menge = [];
     const newArray: any[] = this.items.map(item => item.name );//new array aus names[] und menge[]

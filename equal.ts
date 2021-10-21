@@ -8,4 +8,3 @@ function isObject(object: Item) {
   return object != null && typeof object === 'object';
 }
 
-// Diese Funktion kann nur mit Items arbeiten und ist somit nicht universell verwendbar

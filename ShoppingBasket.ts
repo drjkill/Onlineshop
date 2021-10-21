@@ -1,3 +1,4 @@
+
 import { Item, ItemWithQuantity } from './interface';
 import { isEqual } from "./equal";
 
@@ -88,9 +89,5 @@ const names :any[] = this.items.map(item => item.name );// names[] sortiert item
      newArray[i] = [ this.items[i] , menge[names[i]] = names.filter(x => x == names[i]).length ];
      const result = [...new Set(newArray.map(a => JSON.stringify(a)))].map(a => JSON.parse(a))//doppelte Einträge entfernen
      return result
-=> dkghdfkdlfg    V
+=> dkghdfkdlfg    V*/
 
-
-
- 
-*/

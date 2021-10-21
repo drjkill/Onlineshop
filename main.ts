@@ -19,14 +19,14 @@ catalog1.addProduct(säge)
 catalog1.addProduct(bohrer)
 catalog1.addProduct(schraube)
 
-/*================== AUSGABE============================================== */
+/*================== AUSGABE============================================== 
 console.table(catalog1);
 catalog1.updateProduct("Feile","Lüfter",4.90);
 console.table(catalog1);
 catalog1.deleteProduct("säge")
 catalog1.showProduct("Lüfter")
 catalog1.getProductPrice("Lüfter")
-catalog1.hasProduct("Feile")
+catalog1.hasProduct("Feile")*/
 
 /*================ ShoppingBasket ======================================== */
 const basket1  = new ShoppingBasket();

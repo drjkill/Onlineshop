@@ -1,16 +1,17 @@
-import { Catalog } from "./Catalog";
-import { Item } from "./interface";
-import { ShoppingBasket } from "./ShoppingBasket";
+import { Catalog } from "./Klassen/Catalog";
+import { Item } from "./Interface/item";
+import { ShoppingBasket } from "./Klassen/ShoppingBasket";
+import { RealItem } from './Interface/realItem';
 
 
 /*================ CATALOG =============================================== */
 const catalog1 = new Catalog();
-const schraube = { name: "Schraube", price: 0.05 };
-const nagel    = { name: "Nagel",    price: 0.15 };
-const hammer   = { name: "Hammer",   price: 0.25 };
-const feile    = { name: "Feile",    price: 0.35 };
-const säge     = { name: "säge",     price: 0.45 };
-const bohrer   = { name: "Bohrer",   price: 0.55 };
+const schraube = new RealItem("Schraube", 0.05)
+const nagel    = new RealItem("Nagel",    0.15);
+const hammer   = new RealItem("Hammer",   0.25);
+const feile    = new RealItem("Feile",    0.35);
+const säge     = new RealItem("säge",     0.45);
+const bohrer   = new RealItem("Bohrer",   0.55);
 catalog1.addProduct(schraube)
 catalog1.addProduct(nagel)
 catalog1.addProduct(hammer)
@@ -29,7 +30,7 @@ catalog1.getProductPrice("Lüfter")
 catalog1.hasProduct("Feile")*/
 
 /*================ ShoppingBasket ======================================== */
-const basket1  = new ShoppingBasket();
+const basket1 = new ShoppingBasket();
 basket1.addItem(schraube);
 basket1.addItem(bohrer);
 basket1.addItem(nagel);

@@ -1,6 +1,6 @@
 
-import { Item, ItemWithQuantity } from './interface';
-import { isEqual } from "./equal";
+import { Item, ItemWithQuantity } from '../Interface/item';
+
 
 export class ShoppingBasket {
   items: Array<Item> = [];

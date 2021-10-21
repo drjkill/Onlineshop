@@ -1,15 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Catalog_1 = require("./Catalog");
-const ShoppingBasket_1 = require("./ShoppingBasket");
+const Catalog_1 = require("./Klassen/Catalog");
+const ShoppingBasket_1 = require("./Klassen/ShoppingBasket");
+const realItem_1 = require("./Interface/realItem");
 /*================ CATALOG =============================================== */
 const catalog1 = new Catalog_1.Catalog();
-const schraube = { name: "Schraube", price: 0.05 };
-const nagel = { name: "Nagel", price: 0.15 };
-const hammer = { name: "Hammer", price: 0.25 };
-const feile = { name: "Feile", price: 0.35 };
-const säge = { name: "säge", price: 0.45 };
-const bohrer = { name: "Bohrer", price: 0.55 };
+const schraube = new realItem_1.RealItem("Schraube", 0.05);
+const nagel = new realItem_1.RealItem("Nagel", 0.15);
+const hammer = new realItem_1.RealItem("Hammer", 0.25);
+const feile = new realItem_1.RealItem("Feile", 0.35);
+const säge = new realItem_1.RealItem("säge", 0.45);
+const bohrer = new realItem_1.RealItem("Bohrer", 0.55);
 catalog1.addProduct(schraube);
 catalog1.addProduct(nagel);
 catalog1.addProduct(hammer);
@@ -17,14 +18,14 @@ catalog1.addProduct(feile);
 catalog1.addProduct(säge);
 catalog1.addProduct(bohrer);
 catalog1.addProduct(schraube);
-/*================== AUSGABE============================================== */
+/*================== AUSGABE==============================================
 console.table(catalog1);
-catalog1.updateProduct("Feile", "Lüfter", 4.90);
+catalog1.updateProduct("Feile","Lüfter",4.90);
 console.table(catalog1);
-catalog1.deleteProduct("säge");
-catalog1.showProduct("Lüfter");
-catalog1.getProductPrice("Lüfter");
-catalog1.hasProduct("Feile");
+catalog1.deleteProduct("säge")
+catalog1.showProduct("Lüfter")
+catalog1.getProductPrice("Lüfter")
+catalog1.hasProduct("Feile")*/
 /*================ ShoppingBasket ======================================== */
 const basket1 = new ShoppingBasket_1.ShoppingBasket();
 basket1.addItem(schraube);

@@ -1,4 +1,4 @@
-import { Item } from "./item";
+import { Item } from "../Interface/item";
 
 export class RealItem implements Item {
     name: string;
@@ -8,7 +8,7 @@ export class RealItem implements Item {
         this.name = name;
         this.price = price;
     }
-    isEqual(item: Item): boolean { 
+    isEqual(item:Item):boolean { 
         return item.name === this.name && item.price == this.price; 
     };
 }

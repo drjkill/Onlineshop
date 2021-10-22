@@ -1,7 +1,7 @@
 import { Catalog } from "./Klassen/Catalog";
 import { Item } from "./Interface/item";
 import { ShoppingBasket } from "./Klassen/ShoppingBasket";
-import { RealItem } from './Interface/realItem';
+import { RealItem } from './Klassen/realItem';
 
 
 /*================ CATALOG =============================================== */

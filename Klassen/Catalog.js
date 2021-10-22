@@ -8,9 +8,7 @@ class Catalog {
     }
     ;
     addProduct(newItem) {
-        const found = this.items.some(item => {
-            return newItem.isEqual(item);
-        });
+        const found = this.items.some(item => { return newItem.isEqual(item); });
         if (!found) {
             this.items.push(newItem);
         }

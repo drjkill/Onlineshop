@@ -1,6 +1,6 @@
 import { Item } from "../Interface/item";
 import { areItemIsEqual } from "../NeuerOrdner/equal";
-import { RealItem } from '../Interface/realItem';
+import { RealItem } from './realItem';
 export class Catalog {
   items: Array<Item> = [];
   caches: any;
@@ -10,12 +10,9 @@ export class Catalog {
     return this;
   };
   addProduct(newItem: Item): void {
-    const found = this.items.some(item => {
-      return newItem.isEqual(item)
-    })
-    if (!found) {
-      this.items.push(newItem);
-    } else {
+    const found = this.items.some(item => { return newItem.isEqual(item) })
+     if (!found) {this.items.push(newItem);}
+     else {
       console.log("Das Produkt ist schon vorhanden!");
     }
   };

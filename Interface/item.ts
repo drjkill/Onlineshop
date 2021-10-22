@@ -1,10 +1,8 @@
 export interface Item {
   name: string,
-    price: number,
-  
-    isEqual:(item: Item) => boolean
-  
-  }
+  price: number,
+  isEqual:(item: Item) => boolean
+}
 
 
 export interface ItemWithQuantity {

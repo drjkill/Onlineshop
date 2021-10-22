@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Catalog_1 = require("./Klassen/Catalog");
 const ShoppingBasket_1 = require("./Klassen/ShoppingBasket");
-const realItem_1 = require("./Interface/realItem");
+const realItem_1 = require("./Klassen/realItem");
 /*================ CATALOG =============================================== */
 const catalog1 = new Catalog_1.Catalog();
 const schraube = new realItem_1.RealItem("Schraube", 0.05);

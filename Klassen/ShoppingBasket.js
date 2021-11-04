@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShoppingBasket = void 0;
-class ShoppingBasket {
+export class ShoppingBasket {
     constructor() {
         this.items = [];
         return this;
@@ -88,7 +85,6 @@ class ShoppingBasket {
     }
     ;
 }
-exports.ShoppingBasket = ShoppingBasket;
 ;
 /* so nicht!!!
 const names :any[] = this.items.map(item => item.name );// names[] sortiert items nach name

@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Catalog = void 0;
-class Catalog {
+export class Catalog {
     constructor() {
         this.items = [];
         return this;
@@ -55,5 +52,4 @@ class Catalog {
     }
     ;
 }
-exports.Catalog = Catalog;
 ;

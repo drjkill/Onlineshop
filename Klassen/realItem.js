@@ -1,8 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-// @ts-ignore
-exports.RealItem = void 0;
-class RealItem {
+export class RealItem {
     constructor(name, price) {
         this.name = name;
         this.price = price;
@@ -12,4 +8,3 @@ class RealItem {
     }
     ;
 }
-exports.RealItem = RealItem;
